@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.55.0/build/stlite.js"></script>
     <script>
       stlite.mount({
-        requirements: ["pandas", "scikit-learn", "numpy"], 
+        requirements: ["pandas", "scikit-learn>=1.4.0", "numpy>=2.0.0"],
         entrypoint: "app.py",
         files: {
           // Mount app.py to the root
