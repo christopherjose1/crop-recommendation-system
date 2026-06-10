@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # 1. Load the trained model
-with open('crop_model.pkl', 'rb') as f:
+with open('Crop_Recommender/crop_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # 2. App Styling & Header
