@@ -12,16 +12,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.55.0/build/stlite.js"></script>
     <script>
       stlite.mount({
-        requirements: ["pandas", "scikit-learn", "numpy"], // Your python libraries
+        requirements: ["pandas", "scikit-learn", "numpy"], 
         entrypoint: "app.py",
         files: {
-  "app.py": {
-    url: "https://raw.githubusercontent.com/christopherjose1/crop-recommendation-system/main/Crop_Recommender/app.py"
-  },
-  "Crop_Recommender/crop_model.pkl": {
-    url: "https://raw.githubusercontent.com/christopherjose1/crop-recommendation-system/main/Crop_Recommender/crop_model.pkl"
-  }
-}
+          // Mount app.py to the root
+          "app.py": {
+            url: "https://raw.githubusercontent.com/christopherjose1/crop-recommendation-system/main/Crop_Recommender/app.py"
+          },
+          // Properly map the model to the virtual sub-folder to match app.py
+          "Crop_Recommender/crop_model.pkl": {
+            url: "https://raw.githubusercontent.com/christopherjose1/crop-recommendation-system/main/Crop_Recommender/crop_model.pkl"
+          },
+          // Map the dataset into the sub-folder as well in case app.py reads it
+          "Crop_Recommender/Crop_recommendation.csv": {
+            url: "https://raw.githubusercontent.com/christopherjose1/crop-recommendation-system/main/Crop_Recommender/Crop_recommendation.csv"
+          }
+        }
       }, document.getElementById("root"));
     </script>
   </body>
